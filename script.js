@@ -323,12 +323,16 @@ function displayIndividualScores(scores) {
             displayRank = (score.totalScore === lastScore) ? lastRank : index + 1;
             lastScore = score.totalScore;
             lastRank = displayRank;
-            if (displayRank <= 10) {
-                // Special style for top 10
+            if (displayRank <= 20) {
+                // Special style for top 20
                 const icons = [
                     '<span class="score-icon gold">🏆</span>',
                     '<span class="score-icon silver">🥈</span>',
                     '<span class="score-icon bronze">🥉</span>',
+                    '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'

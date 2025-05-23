@@ -335,6 +335,7 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
@@ -367,6 +368,7 @@ function displayIndividualScores(scores) {
 // Display team scores
 function displayTeamScores(scores) {
     const scoreList = document.getElementById('teamScores');
+    scores = scores.filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
     if (!scoreList) return;
     if (!scores || scores.length === 0) {
         scoreList.innerHTML = '<div class="score-item">Hang tight — team score details are on the way!</div>';

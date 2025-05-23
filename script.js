@@ -190,7 +190,8 @@ async function loadScores() {
             studentHeaders.forEach((header, i) => {
                 student[header.trim()] = row[i] ? row[i].trim() : '';
             });
-            students[student.RegNo] = student;
+            // Store with lowercase RegNo for case-insensitive matching
+            students[student.RegNo ? student.RegNo.trim().toLowerCase() : ''] = student;
         });
 
         // Parse score.csv
@@ -204,34 +205,42 @@ async function loadScores() {
             return entry;
         });
 
-        // Map scores to students
+        // Map scores to students (case-insensitive RegNo matching)
         const individualMap = {};
         const teamMap = {};
         scores.forEach(score => {
-            const regNo = score.RegNo;
+            const regNo = score.RegNo ? score.RegNo.trim().toLowerCase() : '';
             const student = students[regNo];
-            if (!student) return;
+            if (!student) {
+                // Print details if RegNo is not found in students.csv
+                console.log('Missing in students.csv:', score);
+                return;
+            }
             // Individual
             if (!individualMap[regNo]) {
                 individualMap[regNo] = {
-                    regNo,
+                    regNo: student.RegNo,
                     name: student.Name,
                     email: student.Email,
                     team: student.Team,
                     totalScore: 0
                 };
             }
-            individualMap[regNo].totalScore += parseInt(score.Score) || 0;
-            // Team
-            if (!teamMap[student.Team]) {
-                teamMap[student.Team] = {
-                    name: student.Team,
-                    totalScore: 0,
-                    members: new Set()
-                };
+            // Use Number instead of parseInt and check for valid number
+            const scoreValue = Number(score.Score);
+            if (!isNaN(scoreValue)) {
+                individualMap[regNo].totalScore += scoreValue;
+                // Team
+                if (!teamMap[student.Team]) {
+                    teamMap[student.Team] = {
+                        name: student.Team,
+                        totalScore: 0,
+                        members: new Set()
+                    };
+                }
+                teamMap[student.Team].totalScore += scoreValue;
+                teamMap[student.Team].members.add(student.Name);
             }
-            teamMap[student.Team].totalScore += parseInt(score.Score) || 0;
-            teamMap[student.Team].members.add(student.Name);
         });
 
         // Prepare arrays for display
@@ -306,9 +315,15 @@ function displayIndividualScores(scores) {
         scoreList.innerHTML = '<div class="score-item">Hang tight — individual score details are on the way!</div>';
         return;
     }
+    let lastScore = null;
+    let lastRank = 0;
+    let displayRank = 0;
     scoreList.innerHTML = scores
         .map((score, index) => {
-            if (index < 10) {
+            displayRank = (score.totalScore === lastScore) ? lastRank : index + 1;
+            lastScore = score.totalScore;
+            lastRank = displayRank;
+            if (displayRank <= 10) {
                 // Special style for top 10
                 const icons = [
                     '<span class="score-icon gold">🏆</span>',
@@ -319,9 +334,9 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
-                    <div class="score-item top-six top-${index + 1}">
-                        <div class="score-rank top-rank top-rank-${index + 1}">${index + 1}</div>
-                        ${icons[index] || ''}
+                    <div class="score-item top-six top-${displayRank}">
+                        <div class="score-rank top-rank top-rank-${displayRank}">${displayRank}</div>
+                        ${icons[displayRank - 1] || ''}
                         <div class="score-info">
                             <div class="score-name">${score.name}</div>
                             <div class="score-team">Team ${score.team}</div>
@@ -332,7 +347,7 @@ function displayIndividualScores(scores) {
             } else {
                 return `
                     <div class="score-item">
-                        <div class="score-rank ${index < 3 ? 'top-' + (index + 1) : ''}">${index + 1}</div>
+                        <div class="score-rank ${displayRank <= 3 ? 'top-' + displayRank : ''}">${displayRank}</div>
                         <div class="score-info">
                             <div class="score-name">${score.name}</div>
                             <div class="score-team">Team ${score.team}</div>
@@ -353,9 +368,15 @@ function displayTeamScores(scores) {
         scoreList.innerHTML = '<div class="score-item">Hang tight — team score details are on the way!</div>';
         return;
     }
+    let lastScore = null;
+    let lastRank = 0;
+    let displayRank = 0;
     scoreList.innerHTML = scores
         .map((score, index) => {
-            if (index < 10) {
+            displayRank = (score.totalScore === lastScore) ? lastRank : index + 1;
+            lastScore = score.totalScore;
+            lastRank = displayRank;
+            if (displayRank <= 10) {
                 const icons = [
                     '<span class="score-icon gold">🏆</span>',
                     '<span class="score-icon silver">🥈</span>',
@@ -365,9 +386,9 @@ function displayTeamScores(scores) {
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
-                    <div class="score-item p-2 top-six top-${index + 1}">
-                        <div class="score-rank top-rank top-rank-${index + 1}">${index + 1}</div>
-                        ${icons[index] || ''}
+                    <div class="score-item p-2 top-six top-${displayRank}">
+                        <div class="score-rank top-rank top-rank-${displayRank}">${displayRank}</div>
+                        ${icons[displayRank - 1] || ''}
                         <div class="score-info">
                             <div class="score-name">Team ${score.name}</div>
                             <div class="team-members">${score.members}</div>
@@ -378,7 +399,7 @@ function displayTeamScores(scores) {
             } else {
                 return `
                     <div class="score-item">
-                        <div class="score-rank ${index < 3 ? 'top-' + (index + 1) : ''}">${index + 1}</div>
+                        <div class="score-rank ${displayRank <= 3 ? 'top-' + displayRank : ''}">${displayRank}</div>
                         <div class="score-info">
                             <div class="score-name">Team ${score.name}</div>
                             <div class="team-members">${score.members}</div>
@@ -395,3 +416,5 @@ function displayTeamScores(scores) {
 document.addEventListener('DOMContentLoaded', () => {
     loadScores();
 });
+
+

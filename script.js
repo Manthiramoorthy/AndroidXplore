@@ -336,6 +336,7 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
@@ -346,7 +347,7 @@ function displayIndividualScores(scores) {
                             <div class="score-name">${score.name}</div>
                             <div class="score-team">Team ${score.team}</div>
                         </div>
-                        <div class="score-value">${score.totalScore} pts</div>
+                        <div class="score-value">${score.totalScore.toFixed(2)} pts</div>
                     </div>
                 `;
             } else {
@@ -357,7 +358,7 @@ function displayIndividualScores(scores) {
                             <div class="score-name">${score.name}</div>
                             <div class="score-team">Team ${score.team}</div>
                         </div>
-                        <div class="score-value">${score.totalScore} pts</div>
+                        <div class="score-value">${score.totalScore.toFixed(2)} pts</div>
                     </div>
                 `;
             }
@@ -368,7 +369,6 @@ function displayIndividualScores(scores) {
 // Display team scores
 function displayTeamScores(scores) {
     const scoreList = document.getElementById('teamScores');
-    scores = scores.filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
     if (!scoreList) return;
     if (!scores || scores.length === 0) {
         scoreList.innerHTML = '<div class="score-item">Hang tight — team score details are on the way!</div>';
@@ -399,7 +399,7 @@ function displayTeamScores(scores) {
                             <div class="score-name">Team ${score.name}</div>
                             <div class="team-members">${score.members}</div>
                         </div>
-                        <div class="score-value">${score.totalScore} pts</div>
+                        <div class="score-value">${score.totalScore.toFixed(2)} pts</div>
                     </div>
                 `;
             } else {
@@ -410,7 +410,7 @@ function displayTeamScores(scores) {
                             <div class="score-name">Team ${score.name}</div>
                             <div class="team-members">${score.members}</div>
                         </div>
-                        <div class="score-value">${score.totalScore} pts</div>
+                        <div class="score-value">${score.totalScore.toFixed(2)} pts</div>
                     </div>
                 `;
             }

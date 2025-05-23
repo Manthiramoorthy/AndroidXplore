@@ -368,6 +368,7 @@ function displayIndividualScores(scores) {
 
 // Display team scores
 function displayTeamScores(scores) {
+    scores = scores.filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
     const scoreList = document.getElementById('teamScores');
     if (!scoreList) return;
     if (!scores || scores.length === 0) {

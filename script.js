@@ -231,22 +231,25 @@ async function loadScores() {
             if (!isNaN(scoreValue)) {
                 individualMap[regNo].totalScore += scoreValue;
                 // Team
-                if (!teamMap[student.Team]) {
-                    teamMap[student.Team] = {
+                const teamKey = student.Team.toLowerCase().trim();
+                if (!teamMap[teamKey]) {
+                    teamMap[teamKey] = {
                         name: student.Team,
                         totalScore: 0,
                         members: new Set()
                     };
                 }
-                teamMap[student.Team].totalScore += scoreValue;
-                teamMap[student.Team].members.add(student.Name);
+                teamMap[teamKey].totalScore += scoreValue;
+                teamMap[teamKey].members.add(student.Name);
             }
         });
-
+    
         // Prepare arrays for display
         const individualScores = Object.values(individualMap).sort((a, b) => b.totalScore - a.totalScore);
         const teamScores = Object.values(teamMap).map(team => ({
             ...team,
+            totalScore: team.totalScore/team.members.size, // Average score per members
+            totalMembers: team.members.size,
             members: Array.from(team.members).join(', ')
         })).sort((a, b) => b.totalScore - a.totalScore);
 
@@ -337,6 +340,7 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
@@ -368,7 +372,10 @@ function displayIndividualScores(scores) {
 
 // Display team scores
 function displayTeamScores(scores) {
-    scores = scores.filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
+    scores = scores
+    .filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
+    .filter(score => score.totalMembers >= 2)
+
     const scoreList = document.getElementById('teamScores');
     if (!scoreList) return;
     if (!scores || scores.length === 0) {

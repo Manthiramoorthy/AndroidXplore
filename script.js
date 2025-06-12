@@ -372,8 +372,10 @@ function displayIndividualScores(scores) {
 
 // Display team scores
 function displayTeamScores(scores) {
+    scores.filter(score => score.totalMembers < 2).forEach(score => {
+        console.warn(`Team ${score.name} has less than 2 members, skipping display.`);
+    })
     scores = scores
-    .filter(score => score.name && score.name.trim().toLowerCase() !== 'yet to be decide')
     .filter(score => score.totalMembers >= 2)
 
     const scoreList = document.getElementById('teamScores');

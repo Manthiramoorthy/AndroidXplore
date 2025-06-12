@@ -231,7 +231,7 @@ async function loadScores() {
             if (!isNaN(scoreValue)) {
                 individualMap[regNo].totalScore += scoreValue;
                 // Team
-                const teamKey = student.Team.toLowerCase().trim();
+                const teamKey = student.Team.toLowerCase().trim().replace(" ","");
                 if (!teamMap[teamKey]) {
                     teamMap[teamKey] = {
                         name: student.Team,

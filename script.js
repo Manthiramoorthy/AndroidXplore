@@ -263,7 +263,7 @@ async function loadScores() {
         }).sort((a, b) => b.totalScore - a.totalScore);
 
         // Ensure all teams are included, even those with no scores
-        // Build a map of all teams from students.csv
+        // Build a map of all teams from students.csv, with all members
         const allTeams = {};
         Object.values(students).forEach(student => {
             const teamKey = student.Team ? student.Team.toLowerCase().trim().replace(" ","") : '';
@@ -278,6 +278,7 @@ async function loadScores() {
         // Remove teams named "Yet to be decide" and teams with <2 members
         Object.keys(allTeams).forEach(key => {
             if (
+                !allTeams[key].name ||
                 allTeams[key].name.toLowerCase().includes('yet to be decide') ||
                 allTeams[key].members.size < 2
             ) {
@@ -285,16 +286,16 @@ async function loadScores() {
             }
         });
 
-        // Merge with teamMap (scores)
+        // Merge with teamMap (scores), but always use all members from students.csv
         const allTeamScores = Object.keys(allTeams).map(teamKey => {
             const team = allTeams[teamKey];
             if (teamMap[teamKey]) {
-                // Use calculated score and members
+                // Use calculated score, but members from students.csv
                 return {
                     ...teamMap[teamKey],
-                    totalScore: teamMap[teamKey].totalScore / teamMap[teamKey].members.size, // average
-                    totalMembers: teamMap[teamKey].members.size,
-                    members: Array.from(teamMap[teamKey].members).join(', ')
+                    totalScore: teamMap[teamKey].totalScore / team.members.size, // average
+                    totalMembers: team.members.size,
+                    members: Array.from(team.members).join(', ')
                 };
             } else {
                 // No score, but valid team
@@ -386,6 +387,7 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon gold">🏆</span>',
                     '<span class="score-icon silver">🥈</span>',
                     '<span class="score-icon bronze">🥉</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',

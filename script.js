@@ -208,12 +208,13 @@ async function loadScores() {
         // Map scores to students (case-insensitive RegNo matching)
         const individualMap = {};
         const teamMap = {};
+        console.log('Missing in students.csv:');
         scores.forEach(score => {
             const regNo = score.RegNo ? score.RegNo.trim().toLowerCase() : '';
             const student = students[regNo];
             if (!student) {
                 // Print details if RegNo is not found in students.csv
-                console.log('Missing in students.csv:', score);
+                console.log("Email : " + score.email + "," + " RegNo : " + regNo + "," + " Name : " + score.Name + "," + " Team : " + score.Team)
                 return;
             }
             // Individual
@@ -245,17 +246,70 @@ async function loadScores() {
         });
     
         // Prepare arrays for display
-        const individualScores = Object.values(individualMap).sort((a, b) => b.totalScore - a.totalScore);
-        const teamScores = Object.values(teamMap).map(team => ({
-            ...team,
-            totalScore: team.totalScore/team.members.size, // Average score per members
-            totalMembers: team.members.size,
-            members: Array.from(team.members).join(', ')
-        })).sort((a, b) => b.totalScore - a.totalScore);
+        // Ensure all students are included, even those with no scores
+        const allIndividualScores = Object.values(students).map(student => {
+            const regNo = student.RegNo ? student.RegNo.trim().toLowerCase() : '';
+            if (individualMap[regNo]) {
+                return individualMap[regNo];
+            } else {
+                return {
+                    regNo: student.RegNo,
+                    name: student.Name,
+                    email: student.Email,
+                    team: student.Team,
+                    totalScore: 0
+                };
+            }
+        }).sort((a, b) => b.totalScore - a.totalScore);
+
+        // Ensure all teams are included, even those with no scores
+        // Build a map of all teams from students.csv
+        const allTeams = {};
+        Object.values(students).forEach(student => {
+            const teamKey = student.Team ? student.Team.toLowerCase().trim().replace(" ","") : '';
+            if (!allTeams[teamKey]) {
+                allTeams[teamKey] = {
+                    name: student.Team,
+                    members: new Set(),
+                };
+            }
+            allTeams[teamKey].members.add(student.Name);
+        });
+        // Remove teams named "Yet to be decide" and teams with <2 members
+        Object.keys(allTeams).forEach(key => {
+            if (
+                allTeams[key].name.toLowerCase().includes('yet to be decide') ||
+                allTeams[key].members.size < 2
+            ) {
+                delete allTeams[key];
+            }
+        });
+
+        // Merge with teamMap (scores)
+        const allTeamScores = Object.keys(allTeams).map(teamKey => {
+            const team = allTeams[teamKey];
+            if (teamMap[teamKey]) {
+                // Use calculated score and members
+                return {
+                    ...teamMap[teamKey],
+                    totalScore: teamMap[teamKey].totalScore / teamMap[teamKey].members.size, // average
+                    totalMembers: teamMap[teamKey].members.size,
+                    members: Array.from(teamMap[teamKey].members).join(', ')
+                };
+            } else {
+                // No score, but valid team
+                return {
+                    name: team.name,
+                    totalScore: 0,
+                    totalMembers: team.members.size,
+                    members: Array.from(team.members).join(', ')
+                };
+            }
+        }).sort((a, b) => b.totalScore - a.totalScore);
 
         // Display scores
-        displayIndividualScores(individualScores);
-        displayTeamScores(teamScores);
+        displayIndividualScores(allIndividualScores);
+        displayTeamScores(allTeamScores);
     } catch (error) {
         console.error('Error processing scores:', error);
         document.getElementById('individualScores').innerHTML = '<div class="score-item">Error loading scores</div>';
@@ -341,6 +395,8 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
@@ -349,7 +405,7 @@ function displayIndividualScores(scores) {
                         ${icons[displayRank - 1] || ''}
                         <div class="score-info">
                             <div class="score-name">${score.name}</div>
-                            <div class="score-team">Team ${score.team}</div>
+                            <div class="score-team">${score.team}</div>
                         </div>
                         <div class="score-value">${score.totalScore.toFixed(2)} pts</div>
                     </div>

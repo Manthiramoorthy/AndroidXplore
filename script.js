@@ -399,6 +399,7 @@ function displayIndividualScores(scores) {
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>',
+                    '<span class="score-icon star">⭐</span>',
                     '<span class="score-icon star">⭐</span>'
                 ];
                 return `
@@ -485,6 +486,62 @@ function displayTeamScores(scores) {
         })
         .join('');
 }
+
+// --- SLOT SCHEDULE DISPLAY ---
+function parseCSV(csv) {
+    const lines = csv.trim().split('\n');
+    const headers = lines[0].split(',');
+    return lines.slice(1).map(line => {
+        // Handle quoted fields with commas
+        const values = [];
+        let current = '', inQuotes = false;
+        for (let i = 0; i < line.length; i++) {
+            const char = line[i];
+            if (char === '"') inQuotes = !inQuotes;
+            else if (char === ',' && !inQuotes) {
+                values.push(current);
+                current = '';
+            } else {
+                current += char;
+            }
+        }
+        values.push(current);
+        const obj = {};
+        headers.forEach((h, i) => obj[h.trim()] = values[i]?.replace(/^"|"$/g, '').trim());
+        return obj;
+    });
+}
+
+function renderSlots(slots) {
+    const container = document.getElementById('slots-list');
+    if (!container) return;
+    let i = 1;
+    container.innerHTML = slots.map(slot => `
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm slot-card h-100">
+                <div class="card-body p-3">
+                    <h5 class="card-title mb-2" style="font-weight:600; color:#38BDF8;">${i++} - ${slot['Team Name']}</h5>
+                    <div class="small text-muted mb-1">Batch: <b>${slot.Batch}</b></div>
+                    <div class="mb-1">
+                        <span>Time slot: ${slot['Time Slot']}</span>
+                    </div>
+                    <div class="mb-1">Team Size: <b>${slot['Team Size']}</b></div>
+                    <details>
+                        <summary class="mb-1">Members</summary>
+                        <div class="small member-list">${slot['Team Members (Name - Reg No)'].split(';').map(m => `<div>${m.trim()}</div>`).join('')}</div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+fetch('slots.csv')
+    .then(res => res.text())
+    .then(csv => {
+        const slots = parseCSV(csv);
+        renderSlots(slots);
+    });
 
 // Load scores when the page loads
 document.addEventListener('DOMContentLoaded', () => {

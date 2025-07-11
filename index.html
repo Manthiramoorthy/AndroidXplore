@@ -1,106 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
-    <meta http-equiv='pragma' content='no-cache'>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AndroidXplore Hackathon 2025 - Join our unique Android development challenge alongside a 60-hour training program">
-    <meta name="theme-color" content="#2575fc">
+  <head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AndroidXplore Hackathon 2025 - Join our unique Android development challenge alongside a 60-hour training program"
+    />
+    <meta name="theme-color" content="#2575fc" />
     <title>AndroidXplore Hackathon 2025</title>
-    <link rel="icon" type="image/jpg" href="./icon.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="icon" type="image/jpg" href="./icon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="icon.jpg" alt="Logo" width="40" height="40" class="rounded-circle shadow-sm">
-                <span>AndroidXplore</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#themes">Themes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rules">Rules</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#evaluation">Criteria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#scoreboard">Scoreboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#slots-section">Time slots</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link register-btn" href="https://forms.gle/LEE2GyNpPziQSc7EA" target="_blank">Register Now</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <img
+            src="icon.jpg"
+            alt="Logo"
+            width="40"
+            height="40"
+            class="rounded-circle shadow-sm"
+          />
+          <span>AndroidXplore</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#winners">Winners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#timeline">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#themes">Themes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#rules">Rules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#evaluation">Criteria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#scoreboard">Scoreboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#slots-section">Time slots</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item">
+              <a
+                class="nav-link register-btn"
+                href="https://forms.gle/LEE2GyNpPziQSc7EA"
+                target="_blank"
+                >Register Now</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero-section">
-        <div class="header-bg-wrapper">
-            <div class="header-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
+      <div class="header-bg-wrapper">
+        <div class="header-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
         </div>
-        
-        <div class="container-fluid px-0">
-            <div class="hero-content">
-                <div class="hero-text text-center">
-                    <div class="event-badge p-2">
-                        <span class="pulse"></span>
-                        <span>Live Registration Open</span>
-                    </div>
-                    <h1 class="hero-title">AndroidXplore <br>Hackathon 2025</h1>
-                    
-                    <div class="countdown-section">
-                        <div class="countdown-wrapper">
-                            <div id="timer" class="countdown-timer"></div>
-                        </div>
-                    </div>
+      </div>
 
-                    <p class="hero-description">A unique blend of learning and building, conducted alongside the 60-hour Android Development Training Program!</p>
-                    
-                    <div class="event-highlights">
-                        <div class="highlight-item">
-                            <i class="bi bi-calendar-event"></i>
-                            <div class="highlight-text">
-                                <strong>Start Date</strong>
-                                <span>22 May, 2025</span>
-                            </div>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="bi bi-flag-fill"></i>
-                            <div class="highlight-text">
-                                <strong>Final Demo</strong>
-                                <span>19 June, 2025</span>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container-fluid px-0">
+        <div class="hero-content">
+          <div class="hero-text text-center">
+            <div class="event-badge p-2">
+              <span class="pulse"></span>
+              <span>Live Registration Open</span>
+            </div>
+            <h1 class="hero-title">AndroidXplore <br />Hackathon 2025</h1>
 
-                    <div class="hero-actions">
-                        <a href="https://forms.gle/LEE2GyNpPziQSc7EA" target="_blank" class="btn btn-primary">
-                            <span>Register Now</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                        <a href="#about" class="btn btn-outline">
-                            <span>Learn More</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </a>
-                    </div>
+            <div class="countdown-section">
+              <div class="countdown-wrapper">
+                <div id="timer" class="countdown-timer"></div>
+              </div>
+            </div>
+
+            <p class="hero-description">
+              A unique blend of learning and building, conducted alongside the
+              60-hour Android Development Training Program!
+            </p>
+
+            <div class="event-highlights">
+              <div class="highlight-item">
+                <i class="bi bi-calendar-event"></i>
+                <div class="highlight-text">
+                  <strong>Start Date</strong>
+                  <span>22 May, 2025</span>
                 </div>
+              </div>
+              <div class="highlight-item">
+                <i class="bi bi-flag-fill"></i>
+                <div class="highlight-text">
+                  <strong>Final Demo</strong>
+                  <span>19 June, 2025</span>
+                </div>
+              </div>
+            </div>
 
-                <!-- <div class="hero-stats">
+            <div class="hero-actions">
+              <a
+                href="https://forms.gle/LEE2GyNpPziQSc7EA"
+                target="_blank"
+                class="btn btn-primary"
+              >
+                <span>Register Now</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="#about" class="btn btn-outline">
+                <span>Learn More</span>
+                <i class="bi bi-chevron-down"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- <div class="hero-stats">
                     <div class="stat-card">
                         <div class="stat-icon">
                             <i class="bi bi-laptop"></i>
@@ -123,326 +180,657 @@
                         <div class="stat-label">Prize Pool</div>
                     </div>
                 </div> -->
-            </div>
         </div>
+      </div>
     </header>
 
     <!-- About Section -->
     <section id="about" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>About The Hackathon</h2>
-                <p class="lead">Learn, Build, and Innovate</p>
-            </div>
-            <div class="row g-4 mb-5">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        <p class="mb-4">Unlike traditional hackathons, this one kicks off from Day 1 of your training. As you learn Android development — from layouts and activities to Jetpack components and services — you'll also start working on a real app idea with your team.</p>
-                        <p>This approach ensures you build as you learn, giving you practical experience and a complete project by the end of the program.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-laptop"></i>
-                        <h3>60 Hours Training</h3>
-                        <p>Expert-led Android development training from basics to advanced concepts</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-people"></i>
-                        <h3>Team Size: 2-6</h3>
-                        <p>Form your dream team and collaborate to build amazing solutions</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <i class="bi bi-trophy"></i>
-                        <h3>Recognition</h3>
-                        <p>Get recognized for your innovation and technical excellence</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>About The Hackathon</h2>
+          <p class="lead">Learn, Build, and Innovate</p>
         </div>
+        <div class="row g-4 mb-5">
+          <div class="col-12">
+            <div class="about-content text-center">
+              <p class="mb-4">
+                Unlike traditional hackathons, this one kicks off from Day 1 of
+                your training. As you learn Android development — from layouts
+                and activities to Jetpack components and services — you'll also
+                start working on a real app idea with your team.
+              </p>
+              <p>
+                This approach ensures you build as you learn, giving you
+                practical experience and a complete project by the end of the
+                program.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-laptop"></i>
+              <h3>60 Hours Training</h3>
+              <p>
+                Expert-led Android development training from basics to advanced
+                concepts
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-people"></i>
+              <h3>Team Size: 2-6</h3>
+              <p>
+                Form your dream team and collaborate to build amazing solutions
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <i class="bi bi-trophy"></i>
+              <h3>Recognition</h3>
+              <p>Get recognized for your innovation and technical excellence</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Winners & Best Performers Section -->
+    <section id="winners" class="section-padding bg-light">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 style="color: #2575fc; font-weight: 800; letter-spacing: 1px">
+            <i class="bi bi-trophy-fill" style="color: #f8b500"></i> Hackathon
+            Winners & Best Performers
+          </h2>
+          <p class="lead" style="font-size: 1.3rem">
+            Celebrating Innovation, Teamwork & Individual Brilliance
+          </p>
+        </div>
+        <div class="row g-4 mb-4 justify-content-center">
+          <!-- First Prize -->
+          <div class="col-lg-6">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #fceabb 0%, #f8b500 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fs-5 shadow"
+                ><i class="bi bi-1-circle-fill"></i> 1st Place</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-trophy-fill"
+                  style="font-size: 2rem; color: #b8860b"
+                ></i>
+                <h3 class="mb-0" style="color: #b8860b; font-weight: 700">
+                  Infinity Iterators
+                </h3>
+              </div>
+              <div class="mb-2">
+                <span class="badge bg-dark-subtle text-dark fs-6"
+                  >Project: Trading App</span
+                >
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Saquib Hussain</span>
+                <span class="winner-name-badge">Ashish Kumar</span>
+                <span class="winner-name-badge">Kunal Kumar Giri</span>
+                <span class="winner-name-badge">Ansh Narang</span>
+                <span class="winner-name-badge">Shashank Shekhar</span>
+                <span class="winner-name-badge">Gamidi Surya Vardhin</span>
+              </div>
+            </div>
+          </div>
+          <!-- Second Prize -->
+          <div class="col-lg-6">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-primary position-absolute top-0 end-0 m-3 fs-5 shadow"
+                ><i class="bi bi-2-circle-fill"></i> 2nd Place</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-award-fill"
+                  style="font-size: 2rem; color: #2575fc"
+                ></i>
+                <h3 class="mb-0" style="color: #2575fc; font-weight: 700">
+                  DroidDevs
+                </h3>
+              </div>
+              <div class="mb-2">
+                <span class="badge bg-dark-subtle text-dark fs-6"
+                  >Project: PocketPages</span
+                >
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Shrey Mittal</span>
+                <span class="winner-name-badge">Dev Asati</span>
+                <span class="winner-name-badge">Devavrat Verma</span>
+                <span class="winner-name-badge"
+                  >Hrishikesh Arun Virupakshi</span
+                >
+                <span class="winner-name-badge">Shreejit Paul</span>
+                <span class="winner-name-badge">Sidhant Choudhury</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Third Prize Winners -->
+        <div class="row g-4 mb-4 justify-content-center">
+          <div class="col-lg-6">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #f8ffae 0%, #43c6ac 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-success position-absolute top-0 end-0 m-3 fs-5 shadow"
+                ><i class="bi bi-3-circle-fill"></i> 3rd Place</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-gem"
+                  style="font-size: 2rem; color: #43c6ac"
+                ></i>
+                <h3 class="mb-0" style="color: #43c6ac; font-weight: 700">
+                  Royal Code Breakers
+                </h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Harshit Kumar</span>
+                <span class="winner-name-badge">Harsh Kumar Singh</span>
+                <span class="winner-name-badge">Anushka Dubey</span>
+                <span class="winner-name-badge">Tanmay Yadav</span>
+                <span class="winner-name-badge">Piyushi Singh</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #f8ffae 0%, #f7797d 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-success position-absolute top-0 end-0 m-3 fs-5 shadow"
+                ><i class="bi bi-3-circle-fill"></i> 3rd Place</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-gem"
+                  style="font-size: 2rem; color: #f7797d"
+                ></i>
+                <h3 class="mb-0" style="color: #f7797d; font-weight: 700">
+                  CAP – Fitness App Team
+                </h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Pranav Kumar Thakur</span>
+                <span class="winner-name-badge">Aryan Gupta</span>
+                <span class="winner-name-badge">Akshit Kumar Rajput</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Special Recognition -->
+        <div class="row g-4 mb-4 justify-content-center">
+          <div class="col-lg-8">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-purple position-absolute top-0 end-0 m-3 fs-5 shadow"
+                style="background: #8e44ad !important; color: #fff"
+                ><i class="bi bi-star-fill"></i> Special Mention</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-star-fill"
+                  style="font-size: 2rem; color: #8e44ad"
+                ></i>
+                <h3 class="mb-0" style="color: #8e44ad; font-weight: 700">
+                  Eclair
+                </h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Shyam K Krishnan</span>
+                <span class="winner-name-badge">Varun Umapathy</span>
+                <span class="winner-name-badge">V Yogesh</span>
+                <span class="winner-name-badge">Vignesh N</span>
+                <span class="winner-name-badge">Aravind Nayagam U</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Best Individual Performers -->
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-8">
+            <div
+              class="winner-card p-4 h-100 border-0 position-relative animate__animated animate__fadeInUp"
+              style="
+                background: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+                border-radius: 2rem;
+                overflow: hidden;
+              "
+            >
+              <span
+                class="badge bg-danger position-absolute top-0 end-0 m-3 fs-5 shadow"
+                ><i class="bi bi-person-fill"></i> Best Performer</span
+              >
+              <div class="d-flex align-items-center mb-2 gap-2">
+                <i
+                  class="bi bi-person-fill"
+                  style="font-size: 2rem; color: #e17055"
+                ></i>
+                <h3 class="mb-0" style="color: #e17055; font-weight: 700">
+                  Best Individual Performers
+                </h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="winner-name-badge">Pushadapu Lalitha Sahithi</span>
+                <span class="winner-name-badge">Shyam K Krishnan</span>
+                <span class="winner-name-badge">Siva Subramanyam Ghanta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Animate.css CDN for subtle animations -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+      />
+      <style>
+        .winner-name-badge {
+          display: inline-flex;
+          align-items: center;
+          font-weight: 900;
+          font-size: 1.18rem;
+          padding: 0.55em 1.3em 0.55em 1.1em;
+          margin-bottom: 0.3em;
+          margin-right: 0.25em;
+          border-radius: 2em;
+          background: linear-gradient(90deg, #fffbe6 0%, #ffe082 100%);
+          color: #b8860b;
+          box-shadow: 0 2px 12px 0 rgba(248, 181, 0, 0.18),
+            0 1.5px 6px 0 rgba(0, 0, 0, 0.04);
+          border: 2.5px solid #ffd700;
+          letter-spacing: 0.7px;
+          transition: transform 0.18s, box-shadow 0.18s;
+          text-shadow: 0 1px 8px #fffbe6, 0 1px 1px #ffe082, 0 0 6px #ffd70099;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          animation: winner-glow 2.5s infinite alternate;
+        }
+        .winner-name-badge:before {
+          content: "\1F451"; /* crown emoji */
+          font-size: 1.1em;
+          margin-right: 0.5em;
+          filter: drop-shadow(0 0 2px #ffd700);
+        }
+        .winner-card .winner-name-badge:hover {
+          transform: scale(1.11) rotate(-2deg);
+          box-shadow: 0 6px 24px 0 #ffe082, 0 2px 8px 0 #b8860b33;
+          background: linear-gradient(90deg, #ffe082 0%, #fffbe6 100%);
+        }
+        @keyframes winner-glow {
+          0% {
+            box-shadow: 0 2px 12px 0 #ffe08299, 0 1.5px 6px 0 #b8860b33;
+          }
+          100% {
+            box-shadow: 0 4px 32px 0 #ffd700cc, 0 2px 8px 0 #b8860b33;
+          }
+        }
+      </style>
     </section>
 
     <!-- Timeline Section -->
     <section id="timeline" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Event Timeline</h2>
-                <p class="lead">Key dates and milestones</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>22 May, 2025</h4>
-                        <p>Idea Submission Starts</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>26 May, 2025</h4>
-                        <p>Idea Submission Ends</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>19 June, 2025</h4>
-                        <p>Final Submission & Demo</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h4>21 June, 2025</h4>
-                        <p>Winner Announcement</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Event Timeline</h2>
+          <p class="lead">Key dates and milestones</p>
         </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>22 May, 2025</h4>
+              <p>Idea Submission Starts</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>26 May, 2025</h4>
+              <p>Idea Submission Ends</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>19 June, 2025</h4>
+              <p>Final Submission & Demo</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>21 June, 2025</h4>
+              <p>Winner Announcement</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Themes Section -->
     <section id="themes" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Hackathon Themes</h2>
-                <p class="lead">Choose your innovation track</p>
-            </div>
-            <div class="row g-4">
-                
-                <div class="col-md-4 col-lg-4">
-                    <div class="theme-card">
-                        <div class="theme-icon">
-                            <i class="bi bi-heart-pulse"></i>
-                        </div>
-                        <h3>Health & Wellness</h3>
-                        <p>Healthcare and fitness applications</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="theme-card">
-                        <div class="theme-icon">
-                            <i class="bi bi-book"></i>
-                        </div>
-                        <h3>Education</h3>
-                        <p>Learning and skill development</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="theme-card">
-                        <div class="theme-icon">
-                            <i class="bi bi-lightbulb"></i>
-                        </div>
-                        <h3>Open Innovation</h3>
-                        <p>Music, Art, Media, and other creative Android applications</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Hackathon Themes</h2>
+          <p class="lead">Choose your innovation track</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-4 col-lg-4">
+            <div class="theme-card">
+              <div class="theme-icon">
+                <i class="bi bi-heart-pulse"></i>
+              </div>
+              <h3>Health & Wellness</h3>
+              <p>Healthcare and fitness applications</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="theme-card">
+              <div class="theme-icon">
+                <i class="bi bi-book"></i>
+              </div>
+              <h3>Education</h3>
+              <p>Learning and skill development</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-4">
+            <div class="theme-card">
+              <div class="theme-icon">
+                <i class="bi bi-lightbulb"></i>
+              </div>
+              <h3>Open Innovation</h3>
+              <p>Music, Art, Media, and other creative Android applications</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Rules Section -->
     <section id="rules" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Rules & Guidelines</h2>
-                <p class="lead">Important information for participants</p>
-            </div>
-            <div class="rules-grid">
-                <div class="rule-card">
-                    <div class="rule-icon">
-                        <i class="bi bi-people-fill"></i>
-                    </div>
-                    <h4>Team Size</h4>
-                    <p>Form a team of 2-6 members</p>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-icon">
-                        <i class="bi bi-code-square"></i>
-                    </div>
-                    <h4>Tech Stack</h4>
-                    <p>Use Android Studio, Java/Kotlin</p>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-icon">
-                        <i class="bi bi-check-circle"></i>
-                    </div>
-                    <h4>Submission</h4>
-                    <p>APK + Source Code + Documentation</p>
-                </div>
-                <div class="rule-card">
-                    <div class="rule-icon">
-                        <i class="bi bi-camera-video"></i>
-                    </div>
-                    <h4>Demo</h4>
-                    <p>2-3 minute video presentation</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Rules & Guidelines</h2>
+          <p class="lead">Important information for participants</p>
         </div>
+        <div class="rules-grid">
+          <div class="rule-card">
+            <div class="rule-icon">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h4>Team Size</h4>
+            <p>Form a team of 2-6 members</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-icon">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <h4>Tech Stack</h4>
+            <p>Use Android Studio, Java/Kotlin</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-icon">
+              <i class="bi bi-check-circle"></i>
+            </div>
+            <h4>Submission</h4>
+            <p>APK + Source Code + Documentation</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-icon">
+              <i class="bi bi-camera-video"></i>
+            </div>
+            <h4>Demo</h4>
+            <p>2-3 minute video presentation</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Evaluation Criteria Section -->
     <section id="evaluation" class="section-padding bg-light">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Evaluation Criteria</h2>
-                <p class="lead">How your team will be assessed</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-chat-dots"></i>
-                        <h4>Session Interaction</h4>
-                        <p>Active participation and engagement during training sessions.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-question-circle"></i>
-                        <h4>Quiz Participation</h4>
-                        <p>Performance and involvement in quizzes throughout the program.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-lightbulb"></i>
-                        <h4>Idea Submission</h4>
-                        <p>Quality, clarity, and feasibility of the submitted app idea.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-check2-square"></i>
-                        <h4>App Completion</h4>
-                        <p>How complete and functional your final app is by submission.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-diagram-3"></i>
-                        <h4>Concepts Used</h4>
-                        <p>Application of Android concepts and best practices in your app.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-stars"></i>
-                        <h4>Innovation & Creativity</h4>
-                        <p>Originality, creativity, and innovative features in your solution.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-easel"></i>
-                        <h4>Presentation</h4>
-                        <p>Effectiveness and clarity of your final demo and documentation.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <i class="bi bi-flag"></i>
-                        <h4>Final Submission</h4>
-                        <p>Timely and complete submission of all required materials.</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Evaluation Criteria</h2>
+          <p class="lead">How your team will be assessed</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-chat-dots"></i>
+              <h4>Session Interaction</h4>
+              <p>
+                Active participation and engagement during training sessions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-question-circle"></i>
+              <h4>Quiz Participation</h4>
+              <p>
+                Performance and involvement in quizzes throughout the program.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-lightbulb"></i>
+              <h4>Idea Submission</h4>
+              <p>
+                Quality, clarity, and feasibility of the submitted app idea.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-check2-square"></i>
+              <h4>App Completion</h4>
+              <p>
+                How complete and functional your final app is by submission.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-diagram-3"></i>
+              <h4>Concepts Used</h4>
+              <p>
+                Application of Android concepts and best practices in your app.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-stars"></i>
+              <h4>Innovation & Creativity</h4>
+              <p>
+                Originality, creativity, and innovative features in your
+                solution.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-easel"></i>
+              <h4>Presentation</h4>
+              <p>
+                Effectiveness and clarity of your final demo and documentation.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card">
+              <i class="bi bi-flag"></i>
+              <h4>Final Submission</h4>
+              <p>Timely and complete submission of all required materials.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Scoreboard Section -->
     <section id="scoreboard" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Scoreboard</h2>
-                <p class="lead">Individual & Team Rankings</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="card score-card">
-                        <div class="card-header">
-                            <h3 class="text-center mb-0">Individual Scores</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="score-list" id="individualScores">
-                                <!-- Will be populated by JavaScript -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card score-card">
-                        <div class="card-header">
-                            <h3 class="text-center mb-0">Team Scores</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="score-list" id="teamScores">
-                                <!-- Will be populated by JavaScript -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Scoreboard</h2>
+          <p class="lead">Individual & Team Rankings</p>
         </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card score-card">
+              <div class="card-header">
+                <h3 class="text-center mb-0">Individual Scores</h3>
+              </div>
+              <div class="card-body">
+                <div class="score-list" id="individualScores">
+                  <!-- Will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card score-card">
+              <div class="card-header">
+                <h3 class="text-center mb-0">Team Scores</h3>
+              </div>
+              <div class="card-body">
+                <div class="score-list" id="teamScores">
+                  <!-- Will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-     <!-- Slot Details Section -->
+    <!-- Slot Details Section -->
     <section id="slots-section" class="container my-5">
-        <h2 class="text-center mb-4" style="font-weight:600;">Team Slot Schedule</h2>
-        <div id="slots-list" class="row gy-3 gx-2 justify-content-center"></div>
+      <h2 class="text-center mb-4" style="font-weight: 600">
+        Team Slot Schedule
+      </h2>
+      <div id="slots-list" class="row gy-3 gx-2 justify-content-center"></div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Frequently Asked Questions</h2>
-                <p class="lead">Got questions? We've got answers!</p>
-            </div>
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            What is the registration process?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Register your team through our portal. Each team should have 2-6 members with valid student IDs.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            What should we submit?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Submit your APK, source code, documentation, and a 2-3 minute demo video showcasing your application.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            Is prior Android experience required?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No prior experience needed! We provide 60 hours of training to get you started with Android development.
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Frequently Asked Questions</h2>
+          <p class="lead">Got questions? We've got answers!</p>
         </div>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                What is the registration process?
+              </button>
+            </h2>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Register your team through our portal. Each team should have 2-6
+                members with valid student IDs.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                What should we submit?
+              </button>
+            </h2>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Submit your APK, source code, documentation, and a 2-3 minute
+                demo video showcasing your application.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                Is prior Android experience required?
+              </button>
+            </h2>
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                No prior experience needed! We provide 60 hours of training to
+                get you started with Android development.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-
-   
 
     <!-- Footer -->
     <!-- <footer class="footer-section">
@@ -483,5 +871,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

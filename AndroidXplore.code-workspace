@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "AndroidXplore",
+		"path": "."
+	}
+],
+  "settings": {
+    "livePreview.defaultPreviewPath": "/index.html"
+  }
+}
